@@ -1,3 +1,4 @@
+;;;;;;------====== 界面 ======------;;;;;;
 ;;光标
 ;(setq-default cursor-type 'bar)
 
@@ -9,20 +10,9 @@
 ;;开启菜单
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
 
-;;对文件不进行备份
-(setq-default make-backup-files nil)
-
-;;主题
-(add-to-list 'load-path "~/.emacs.d/color-theme")
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-bharadwaj-slate)
-
 ;;窗口透明
-(global-set-key [(f5)] 'loop-alpha)  ;;注意这行中的F8 , 可以改成你想要的按键
-
+(global-set-key [(f5)] 'loop-alpha)
 (setq alpha-list '((85 55) (100 100)))
-
 (defun loop-alpha ()
   (interactive)
   (let ((h (car alpha-list)))
@@ -33,7 +23,53 @@
     (setq alpha-list (cdr (append alpha-list (list h))))
     )
 )
+(loop-alpha)
 
+;;;;;;------====== 通用 ======------;;;;;;
+
+;;自动提示配对的括号
+(setq show-paren-mode t)
+
+;;杂项
+
+;;不显示起始提示信息(包括scratch)
+(setq inhibit-startup-message t)
+(setq initial-scratch-message nil)
+;;视觉响铃
+(setq visiable-bell t)
+;;高亮选中文本
+(setq-default transient-mark-mode t)
+;;显示列号
+(column-number-mode t)
+;;显示当前时间
+(display-time)
+
+;;一打开就起用 text 模式
+(setq default-major-mode 'text-mode)
+;;dired模式中不显示隐藏文件
+(setq dired-listing-switches "-l")
+;;为文件最后加上换行
+(setq require-final-newline t)
+
+;; 文件相关
+
+;;对文件不进行备份
+(setq-default make-backup-files nil)
+
+;;;;;;------====== 扩展 ======------;;;;;;
+
+;;主题
+(add-to-list 'load-path "~/.emacs.d/color-theme")
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-bharadwaj-slate)
+
+;;ido
+;;C-s C-r C-j C-d C-f // ~/
+(require 'ido)
+(ido-mode t)
+
+;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;新建下一行并缩进
 (defun next-newline ()
