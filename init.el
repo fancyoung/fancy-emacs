@@ -1,3 +1,6 @@
+;;配置路径
+(add-to-list 'load-path "~/.emacs.d")
+
 ;;;;;;------====== 界面 ======------;;;;;;
 ;;光标
 ;(setq-default cursor-type 'bar)
@@ -11,7 +14,7 @@
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
 
 ;;窗口透明
-(global-set-key [(f5)] 'loop-alpha)
+(global-set-key [(C-f5)] 'loop-alpha)
 (setq alpha-list '((85 55) (100 100)))
 (defun loop-alpha ()
   (interactive)
@@ -68,12 +71,18 @@
 (color-theme-initialize)
 (color-theme-bharadwaj-slate)
 
-;;ido
+;;ido ;;embedded in emacs23
 ;;C-s C-r C-j C-d C-f // ~/
 (require 'ido)
 (ido-mode t)
 
-(require 'javascript)
+;;karl's javascript  ;;will embedded in emacs23.2
+(add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
+(autoload 'javascript-mode "javascript" nil t)
+
+;;anything
+;(add-to-list 'load-path "~/.emacs.d")
+(require 'anything-config)
 
 ;;;;;;------====== 快捷 ======------;;;;;;
 
