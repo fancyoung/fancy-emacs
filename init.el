@@ -74,23 +74,40 @@
 (color-theme-bharadwaj-slate)
 
 ;;ido ;;embedded in emacs23
+;;目录工具
 ;;C-s C-r C-j C-d C-f // ~/
 (require 'ido)
 (ido-mode t)
 
 ;;karl's javascript  ;;will embedded in emacs23.2
+;;最好的javascript
 (add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
 (autoload 'javascript-mode "javascript" nil t)
 
 ;;anything
+;;索引文件工具
+;;M-x anything
 (require 'anything-config)
 
 ;;yasnippet
+;;自动补全工具
+;;TAB
 (add-to-list 'load-path
-                  "~/.emacs.d/plugins/yasnippet-0.6.1c")
-    (require 'yasnippet) ;; not yasnippet-bundle
+                  "~/.emacs.d/plugins/yasnippet")
+    (require 'yasnippet)
     (yas/initialize)
-    (yas/load-directory "~/.emacs.d/plugins/yasnippet-0.6.1c/snippets")
+    (yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
+
+;;auto-complete
+;;代码补全
+;;TAB M-p M-n RET
+(add-to-list 'load-path
+                  "~/.emacs.d/plugins/auto-complete")
+(require 'auto-complete-config)
+(add-to-list'ac-dictionary-directories
+ "~/.emacs.d/plugins/auto-complete/dict")
+(ac-config-default)
+
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;新建下一行并缩进
