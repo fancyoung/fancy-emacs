@@ -43,6 +43,10 @@
 (column-number-mode t)
 ;;显示当前时间
 (display-time)
+;光标靠近鼠标指针时，让鼠标指针自动让开，别挡住视线。很好玩阿，这个功能
+(mouse-avoidance-mode 'animate)
+;支持emacs和外部程序的粘贴
+;(setq x-select-enable-clipboard t)
 
 ;;一打开就起用 text 模式
 (setq default-major-mode 'text-mode)
@@ -68,6 +72,8 @@
 ;;C-s C-r C-j C-d C-f // ~/
 (require 'ido)
 (ido-mode t)
+
+(require 'javascript)
 
 ;;;;;;------====== 快捷 ======------;;;;;;
 
