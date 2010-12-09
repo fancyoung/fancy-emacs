@@ -1,5 +1,6 @@
 ;;配置路径
 (add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/plugins")
 
 ;;;;;;------====== 界面 ======------;;;;;;
 ;;光标
@@ -66,7 +67,8 @@
 ;;;;;;------====== 扩展 ======------;;;;;;
 
 ;;主题
-(add-to-list 'load-path "~/.emacs.d/color-theme")
+(add-to-list 'load-path 
+	     "~/.emacs.d/plugins/color-theme")
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-bharadwaj-slate)
@@ -81,9 +83,14 @@
 (autoload 'javascript-mode "javascript" nil t)
 
 ;;anything
-;(add-to-list 'load-path "~/.emacs.d")
 (require 'anything-config)
 
+;;yasnippet
+(add-to-list 'load-path
+                  "~/.emacs.d/plugins/yasnippet-0.6.1c")
+    (require 'yasnippet) ;; not yasnippet-bundle
+    (yas/initialize)
+    (yas/load-directory "~/.emacs.d/plugins/yasnippet-0.6.1c/snippets")
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;新建下一行并缩进
