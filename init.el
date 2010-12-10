@@ -93,19 +93,19 @@
 ;;自动补全工具
 ;;TAB
 (add-to-list 'load-path
-                  "~/.emacs.d/plugins/yasnippet")
-    (require 'yasnippet)
-    (yas/initialize)
-    (yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
+	     "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
 
 ;;auto-complete
 ;;代码补全
 ;;TAB M-p M-n RET
 (add-to-list 'load-path
-                  "~/.emacs.d/plugins/auto-complete")
+	     "~/.emacs.d/plugins/auto-complete")
 (require 'auto-complete-config)
 (add-to-list'ac-dictionary-directories
- "~/.emacs.d/plugins/auto-complete/dict")
+             "~/.emacs.d/plugins/auto-complete/dict")
 (ac-config-default)
 
 ;;;;;;------====== 快捷 ======------;;;;;;
@@ -124,3 +124,6 @@
        (move-end-of-line nil)
        (newline-and-indent))
 (global-set-key (kbd "C-M-j") 'last-newline)
+
+;;;;;;------====== self ======------;;;;;;
+(require 'private)
