@@ -108,6 +108,9 @@
              "~/.emacs.d/plugins/auto-complete/dict")
 (ac-config-default)
 
+;;;nxhtml
+(load "~/.emacs.d/plugins/nxhtml/autostart.el")
+
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;新建下一行并缩进
