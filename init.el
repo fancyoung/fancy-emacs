@@ -111,6 +111,11 @@
 ;;;nxhtml
 (load "~/.emacs.d/plugins/nxhtml/autostart.el")
 
+;use default color in major chunk. seems worked.
+;(setq mumamo-chunk-coloring 'submode-colored) ;can't work
+;(setq mumamo-chunk-coloring 'no-chunks-colored) ;can't work
+(setq mumamo-chunk-coloring 1)
+
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;新建下一行并缩进

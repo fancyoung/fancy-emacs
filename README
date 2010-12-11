@@ -1,3 +1,5 @@
 backup & delete .emacs file and .emacs.d folder first.
 no .emacs file
 all in .emacs.d folder
+
+private.el must be created for some private code.
