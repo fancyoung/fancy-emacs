@@ -3,3 +3,9 @@ no .emacs file
 all in .emacs.d folder
 
 private.el must be created for some private code.
+
+
+Bugs:
+
+1. nxhtml + karl's javascript + inline javascript + inverted comma(')
+el:if input inverted comma in onclick:<a html="#" onclick="">test</a>, emacs will stop running.
