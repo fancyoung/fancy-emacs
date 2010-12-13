@@ -1,0 +1,3 @@
+[submodule "plugins/yasnippet/snippets/text-mode/javascript-mode"]
+	path = plugins/yasnippet/snippets/text-mode/javascript-mode
+	url = git://github.com/fancyoung/yasnippet-javascript.git
