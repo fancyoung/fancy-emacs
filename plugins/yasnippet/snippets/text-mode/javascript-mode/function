@@ -1,0 +1,6 @@
+#name : function x(...){...}
+#by : fancyoung
+# --
+function $1($2){
+    $0
+}
