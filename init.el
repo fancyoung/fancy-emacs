@@ -31,9 +31,6 @@
 
 ;;;;;;------====== 通用 ======------;;;;;;
 
-;;自动提示配对的括号
-(setq show-paren-mode t)
-
 ;;杂项
 
 ;;不显示起始提示信息(包括scratch)
@@ -50,7 +47,9 @@
 ;光标靠近鼠标指针时，让鼠标指针自动让开，别挡住视线。很好玩阿，这个功能
 (mouse-avoidance-mode 'animate)
 ;支持emacs和外部程序的粘贴
-;(setq x-select-enable-clipboard t)
+(setq x-select-enable-clipboard t)
+;;自动显示图片
+(auto-image-file-mode)
 
 ;;一打开就起用 text 模式
 (setq default-major-mode 'text-mode)
@@ -61,8 +60,26 @@
 
 ;; 文件相关
 
+;;sudo为root编辑文件
+;(defun sudo-edit (&optional arg)
+;  (interactive "p")
+;  (if (or arg (not buffer-file-name))
+;      (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
+;    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
 ;;对文件不进行备份
 (setq-default make-backup-files nil)
+
+;;编程相关
+
+;;自动提示配对的括号
+(show-paren-mode 1)
+;(setq show-paren-mode t)
+;;提示文件尾的空行
+(set-default 'indicate-empty-lines t)
+;;不允许用tab做缩进
+(set-default 'indent-tabs-mode nil)
+
 
 ;;;;;;------====== 扩展 ======------;;;;;;
 
@@ -78,6 +95,11 @@
 ;;C-s C-r C-j C-d C-f // ~/
 (require 'ido)
 (ido-mode t)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point 'guess
+      ido-max-prospects 10)
 
 ;;karl's javascript  ;;will embedded in emacs23.2
 ;;最好的javascript
@@ -88,6 +110,7 @@
 ;;索引文件工具
 ;;M-x anything
 (require 'anything-config)
+(global-set-key (kbd "C-c q") 'anything)
 
 ;;yasnippet
 ;;自动补全工具
@@ -107,6 +130,8 @@
 (add-to-list'ac-dictionary-directories
              "~/.emacs.d/plugins/auto-complete/dict")
 (ac-config-default)
+(global-set-key "\M-/" 'auto-complete)
+(setq ac-auto-start nil)
 
 ;;;nxhtml
 (load "~/.emacs.d/plugins/nxhtml/autostart.el")
@@ -117,6 +142,27 @@
 (setq mumamo-chunk-coloring 1)
 
 ;;;;;;------====== 快捷 ======------;;;;;;
+
+;;快捷开启空格显示模式
+(global-set-key (kbd "C-c SPC") 'whitespace-mode)
+;;定制编辑区良好缩进
+(defun untabify-buffer ()
+  (interactive)
+  (untabify (point-min) (point-max)))
+(defun indent-buffer ()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+(defun cleanup-buffer ()
+  "Perform a bunch of operations on the whitespace content of a buffer."
+  (interactive)
+  (indent-buffer)
+  (untabify-buffer)
+  (delete-trailing-whitespace))
+(global-set-key (kbd "C-c n") 'cleanup-buffer)
+;;用正则排列行
+(global-set-key (kbd "C-x \\") 'align-regexp)
+;;归并到上一行
+(global-set-key (kbd "C-x ^") 'join-line)
 
 ;;新建下一行并缩进
 (defun next-newline ()
