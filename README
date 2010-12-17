@@ -1,11 +1,14 @@
-backup & delete .emacs file and .emacs.d folder first.
-no .emacs file
-all in .emacs.d folder
+FANCY-EMACS - my emacs config
+=============================
 
-private.el must be created for some private code.
+Install
+------
+ - backup & delete .emacs file and .emacs.d folder first.(no .emacs file, all in .emacs.d folder)
+ - private.el must be created for some private code.
+ - rsense should be installed
 
 
-Bugs:
-
-1. nxhtml + karl's javascript + inline javascript + inverted comma(')
+Bugs
+------
+- nxhtml + karl's javascript + inline javascript + inverted comma(')
 el:if input inverted comma in onclick:<a html="#" onclick="">test</a>, emacs will stop running.

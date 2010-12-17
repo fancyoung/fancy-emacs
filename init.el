@@ -141,6 +141,24 @@
 ;(setq mumamo-chunk-coloring 'no-chunks-colored) ;can't work
 (setq mumamo-chunk-coloring 1)
 
+;;rsense
+(setq rsense-home "/usr/lib/rsense")
+;(add-to-list 'load-path (concat rsense-home "/etc"))
+(require 'rsense)
+;; Complete by C-c .
+;(add-hook 'ruby-mode-hook
+;          (lambda ()
+;            (local-set-key (kbd "C-c .") 'rsense-complete)))
+;; Complete by C-c .
+;(add-hook 'ruby-mode-hook
+;          (lambda ()
+;            (local-set-key (kbd "C-c .") 'rsense-complete)))
+
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (add-to-list 'ac-sources 'ac-source-rsense-method)
+            (add-to-list 'ac-sources 'ac-source-rsense-constant)))
+
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;快捷开启空格显示模式
