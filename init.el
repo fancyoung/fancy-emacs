@@ -173,6 +173,10 @@
 (global-set-key (kbd "C-c C-q") 'yari)
 (global-set-key (kbd "C-c C-a") 'yari-anything)
 
+;;rails-reload
+(setq load-path (cons (expand-file-name "~/.emacs.d/plugins/rails-reloaded") load-path))
+(require 'rails-autoload)
+
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;快捷开启空格显示模式
