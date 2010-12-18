@@ -158,6 +158,20 @@
           (lambda ()
             (add-to-list 'ac-sources 'ac-source-rsense-method)
             (add-to-list 'ac-sources 'ac-source-rsense-constant)))
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-c C-t") 'rsense-type-help)))
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-c C-j") 'rsense-jump-to-definition)))
+
+;;flymake
+;;语法检查（Emacs23自带，还未找到合适的配置文件）
+
+;;ruby-yari
+(require 'yari)
+(global-set-key (kbd "C-c C-q") 'yari)
+(global-set-key (kbd "C-c C-a") 'yari-anything)
 
 ;;;;;;------====== 快捷 ======------;;;;;;
 
