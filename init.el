@@ -139,7 +139,14 @@
 ;use default color in major chunk. seems worked.
 ;(setq mumamo-chunk-coloring 'submode-colored) ;can't work
 ;(setq mumamo-chunk-coloring 'no-chunks-colored) ;can't work
-(setq mumamo-chunk-coloring 1)
+(setq
+      nxhtml-global-minor-mode t
+      mumamo-chunk-coloring 'submode-colored
+      nxhtml-skip-welcome t
+      indent-region-mode t
+      rng-nxml-auto-validate-flag nil
+      nxml-degraded t)
+;(setq mumamo-chunk-coloring 1)
 
 ;;rsense
 (setq rsense-home "/usr/lib/rsense")
@@ -176,6 +183,11 @@
 ;;rails-reload
 (setq load-path (cons (expand-file-name "~/.emacs.d/plugins/rails-reloaded") load-path))
 (require 'rails-autoload)
+
+;;rinari
+(add-to-list 'load-path "~/.emacs.d/plugins/rinari")
+(require 'rinari)
+(add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-nxhtml-mumamo))
 
 ;;;;;;------====== 快捷 ======------;;;;;;
 
