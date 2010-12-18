@@ -188,6 +188,8 @@
 
 ;;rinari
 ;;页面间跳转<C-c ; f x> x可以为c v m ...
+;;启动服务器<C-c ; w>
+;;rake<C-c ; r>
 (add-to-list 'load-path "~/.emacs.d/plugins/rinari")
 (require 'rinari)
 (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . ruby-mode))
