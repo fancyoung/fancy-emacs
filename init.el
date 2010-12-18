@@ -1,6 +1,7 @@
 ;;配置路径
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/plugins")
+(add-to-list 'load-path "~/.emacs.d/plugins/ruby-mode")
 
 ;;;;;;------====== 界面 ======------;;;;;;
 ;;光标
@@ -139,14 +140,14 @@
 ;use default color in major chunk. seems worked.
 ;(setq mumamo-chunk-coloring 'submode-colored) ;can't work
 ;(setq mumamo-chunk-coloring 'no-chunks-colored) ;can't work
-(setq
-      nxhtml-global-minor-mode t
-      mumamo-chunk-coloring 'submode-colored
-      nxhtml-skip-welcome t
-      indent-region-mode t
-      rng-nxml-auto-validate-flag nil
-      nxml-degraded t)
-;(setq mumamo-chunk-coloring 1)
+;(setq
+;      nxhtml-global-minor-mode t
+;      mumamo-chunk-coloring 'submode-colored
+;      nxhtml-skip-welcome t
+;      indent-region-mode t
+;      rng-nxml-auto-validate-flag nil
+;      nxml-degraded t)
+(setq mumamo-chunk-coloring 1)
 
 ;;rsense
 (setq rsense-home "/usr/lib/rsense")
@@ -180,14 +181,16 @@
 (global-set-key (kbd "C-c C-q") 'yari)
 (global-set-key (kbd "C-c C-a") 'yari-anything)
 
-;;rails-reload
-(setq load-path (cons (expand-file-name "~/.emacs.d/plugins/rails-reloaded") load-path))
-(require 'rails-autoload)
+;;rails-reloaded
+;;暂时不用，仿佛rinari就够了？而且快捷键C-c ;有冲突
+;(setq load-path (cons (expand-file-name "~/.emacs.d/plugins/rails-reloaded") load-path))
+;(require 'rails-autoload)
 
 ;;rinari
+;;页面间跳转<C-c ; f x> x可以为c v m ...
 (add-to-list 'load-path "~/.emacs.d/plugins/rinari")
 (require 'rinari)
-(add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-nxhtml-mumamo))
+(add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . ruby-mode))
 
 ;;;;;;------====== 快捷 ======------;;;;;;
 
