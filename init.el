@@ -233,4 +233,4 @@
 (global-set-key (kbd "C-M-j") 'last-newline)
 
 ;;;;;;------====== self ======------;;;;;;
-(require 'private)
+;;;(require 'private)
