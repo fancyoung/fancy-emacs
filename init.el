@@ -135,7 +135,8 @@
 ;(setq ac-auto-start nil)
 
 ;;;nxhtml
-(load "~/.emacs.d/plugins/nxhtml/autostart.el")
+(require 'haml-mode)
+;;;(load "~/.emacs.d/plugins/nxhtml/autostart.el")
 
 ;use default color in major chunk. seems worked.
 ;(setq mumamo-chunk-coloring 'submode-colored) ;can't work
@@ -147,7 +148,7 @@
 ;      indent-region-mode t
 ;      rng-nxml-auto-validate-flag nil
 ;      nxml-degraded t)
-(setq mumamo-chunk-coloring 1)
+;;;(setq mumamo-chunk-coloring 1)
 
 ;;rsense
 (setq rsense-home "/usr/lib/rsense")
@@ -232,5 +233,10 @@
        (newline-and-indent))
 (global-set-key (kbd "C-M-j") 'last-newline)
 
+;;窗口间跳转
+(global-set-key [M-left] 'windmove-left)          ; move to left windnow
+(global-set-key [M-right] 'windmove-right)        ; move to right window
+(global-set-key [M-up] 'windmove-up)              ; move to upper window
+(global-set-key [M-down] 'windmove-down)          ; move to downer window
 ;;;;;;------====== self ======------;;;;;;
 (require 'private)
