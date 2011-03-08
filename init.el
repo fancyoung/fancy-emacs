@@ -106,12 +106,13 @@
 ;;最好的javascript
 (add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
 (autoload 'javascript-mode "javascript" nil t)
-
+(setq javascript-indent-level 2)
 ;;anything
 ;;索引文件工具
 ;;M-x anything
 (require 'anything-config)
 (global-set-key (kbd "C-c q") 'anything)
+(global-set-key (kbd "C-c C-c") 'anything-for-files)
 
 ;;yasnippet
 ;;自动补全工具
@@ -188,13 +189,19 @@
 ;(require 'rails-autoload)
 
 ;;rinari
-;;页面间跳转<C-c ; f x> x可以为c v m ...
+;;页面间跳转<C-c ; f x> x可以为c v m ... 已绑定新键
 ;;启动服务器<C-c ; w>
 ;;rake<C-c ; r>
 (add-to-list 'load-path "~/.emacs.d/plugins/rinari")
 (require 'rinari)
 (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . ruby-mode))
-
+(global-set-key (kbd "C-c c") 'rinari-find-controller)  
+(global-set-key (kbd "C-c m") 'rinari-find-model)  
+(global-set-key (kbd "C-c v") 'rinari-find-view)  
+(global-set-key (kbd "C-c h") 'rinari-find-helper)  
+(global-set-key (kbd "C-c r") 'rinari-find-rspec)  
+(global-set-key (kbd "C-c f") 'rinari-find-file-in-project)  
+  
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;快捷开启空格显示模式
