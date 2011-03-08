@@ -1,0 +1,8 @@
+auto-save-list
+\#*
+\#*\#
+*.log
+*~
+private.el
+anything-c-adaptive-history
+ac-comphist.dat
