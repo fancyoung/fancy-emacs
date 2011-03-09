@@ -19,6 +19,10 @@ Include
  - rsense
  - yasnippet-javascript (my project: <https://github.com/fancyoung/yasnippet-javascript>)
  - yari
+
+Shortcuts
+[[shortcut]]
+
 Bugs
 ------
 - nxhtml + karl's javascript + inline javascript + inverted comma(')
