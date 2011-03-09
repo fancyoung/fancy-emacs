@@ -203,6 +203,9 @@
 (global-set-key (kbd "C-c j") 'rinari-find-javascript)  
 (global-set-key (kbd "C-c s") 'rinari-find-stylesheet)  
 (global-set-key (kbd "C-c f") 'rinari-find-file-in-project)  
+
+;;git
+(require 'magit)
   
 ;;;;;;------====== 快捷 ======------;;;;;;
 
