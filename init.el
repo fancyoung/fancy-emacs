@@ -206,6 +206,7 @@
 
 ;;git
 (require 'magit)
+(global-set-key (kbd "C-c g") 'magit-status)  
   
 ;;;;;;------====== 快捷 ======------;;;;;;
 
