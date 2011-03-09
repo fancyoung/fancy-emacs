@@ -152,28 +152,28 @@
 ;;;(setq mumamo-chunk-coloring 1)
 
 ;;rsense
-(setq rsense-home "/usr/lib/rsense")
-;(add-to-list 'load-path (concat rsense-home "/etc"))
-(require 'rsense)
-;; Complete by C-c .
-;(add-hook 'ruby-mode-hook
-;          (lambda ()
-;            (local-set-key (kbd "C-c .") 'rsense-complete)))
-;; Complete by C-c .
-;(add-hook 'ruby-mode-hook
-;          (lambda ()
-;            (local-set-key (kbd "C-c .") 'rsense-complete)))
+;; (setq rsense-home "/usr/lib/rsense")
+;;;;;;;;;;;;;;;;;;;(add-to-list 'load-path (concat rsense-home "/etc"))
+;; (require 'rsense)
+;;;;;;;;;;;;;;;;;;;; Complete by C-c .
+;;;;;;;;;;;;;;;;;;;(add-hook 'ruby-mode-hook
+;;;;;;;;;;;;;;;;;;;          (lambda ()
+;;;;;;;;;;;;;;;;;;;            (local-set-key (kbd "C-c .") 'rsense-complete)))
+;;;;;;;;;;;;;;;;;;;; Complete by C-c .
+;;;;;;;;;;;;;;;;;;;(add-hook 'ruby-mode-hook
+;;;;;;;;;;;;;;;;;;;          (lambda ()
+;;;;;;;;;;;;;;;;;;;            (local-set-key (kbd "C-c .") 'rsense-complete)))
 
-(add-hook 'ruby-mode-hook
-          (lambda ()
-            (add-to-list 'ac-sources 'ac-source-rsense-method)
-            (add-to-list 'ac-sources 'ac-source-rsense-constant)))
-(add-hook 'ruby-mode-hook
-          (lambda ()
-            (local-set-key (kbd "C-c C-t") 'rsense-type-help)))
-(add-hook 'ruby-mode-hook
-          (lambda ()
-            (local-set-key (kbd "C-c C-j") 'rsense-jump-to-definition)))
+;; (add-hook 'ruby-mode-hook
+;;           (lambda ()
+;;             (add-to-list 'ac-sources 'ac-source-rsense-method)
+;;             (add-to-list 'ac-sources 'ac-source-rsense-constant)))
+;; (add-hook 'ruby-mode-hook
+;;           (lambda ()
+;;             (local-set-key (kbd "C-c C-t") 'rsense-type-help)))
+;; (add-hook 'ruby-mode-hook
+;;           (lambda ()
+;;             (local-set-key (kbd "C-c C-j") 'rsense-jump-to-definition)))
 
 ;;flymake
 ;;语法检查（Emacs23自带，还未找到合适的配置文件）
@@ -200,6 +200,8 @@
 (global-set-key (kbd "C-c v") 'rinari-find-view)  
 (global-set-key (kbd "C-c h") 'rinari-find-helper)  
 (global-set-key (kbd "C-c r") 'rinari-find-rspec)  
+(global-set-key (kbd "C-c j") 'rinari-find-javascript)  
+(global-set-key (kbd "C-c s") 'rinari-find-stylesheet)  
 (global-set-key (kbd "C-c f") 'rinari-find-file-in-project)  
   
 ;;;;;;------====== 快捷 ======------;;;;;;
