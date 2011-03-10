@@ -59,6 +59,10 @@
 ;;为文件最后加上换行
 (setq require-final-newline t)
 
+;;org-mode
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "DOING(i!)" "HANGUP(h!)" "|" "DONE(d!)" "CANCEL(c!)")))
+
 ;; 文件相关
 
 ;;sudo为root编辑文件
