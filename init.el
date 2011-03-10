@@ -60,6 +60,7 @@
 (setq require-final-newline t)
 
 ;;org-mode
+;;;set TODO list
 (setq org-todo-keywords
       '((sequence "TODO(t)" "DOING(i!)" "HANGUP(h!)" "|" "DONE(d!)" "CANCEL(c!)")))
 
