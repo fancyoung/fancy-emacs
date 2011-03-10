@@ -6,7 +6,13 @@ Install
  - backup & delete .emacs file and .emacs.d folder first.(no .emacs file, all in .emacs.d folder)
  - private.el must be created for some private code.
  - rsense should be installed
- - ctag supported by rinari(should install ctags: $ sudo aptitude install ctags $ ctags-exuberant -a -e -f TAGS --tag-relative -R app lib vendor (run this command under project)<http://rinari.rubyforge.org/Navigation.html>)
+ - ctag supported by rinari
+   (should install ctags: 
+   $ sudo aptitude install ctags 
+   $ ctags-exuberant -a -e -f TAGS --tag-relative -R app lib vendor (run this command under project)
+   (in Mac, maybe should set path /usr/local/bin)
+   <http://rinari.rubyforge.org/Navigation.html>)
+ - install magit
 
 Include
 ------
