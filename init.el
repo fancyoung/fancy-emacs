@@ -116,6 +116,7 @@
 ;;索引文件工具
 ;;M-x anything
 (require 'anything-config)
+(require 'anything-match-plugin)
 (global-set-key (kbd "C-c q") 'anything)
 (global-set-key (kbd "C-c C-c") 'anything-for-files)
 
