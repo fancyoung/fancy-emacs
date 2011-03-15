@@ -111,7 +111,8 @@
 ;;最好的javascript
 (add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
 (autoload 'javascript-mode "javascript" nil t)
-(setq javascript-indent-level 2)
+;;(setq javascript-indent-level 2)
+(setq js-indent-level 2)
 ;;anything
 ;;索引文件工具
 ;;M-x anything
@@ -208,6 +209,14 @@
 (global-set-key (kbd "C-c j") 'rinari-find-javascript)  
 (global-set-key (kbd "C-c s") 'rinari-find-stylesheet)  
 (global-set-key (kbd "C-c f") 'rinari-find-file-in-project)  
+
+
+;; for mac os
+(when (equal system-type 'darwin)
+  (setenv "PATH" (concat "/opt/local/bin:/usr/local/bin:/usr/local/git/bin:" (getenv "PATH")))
+  (push "/opt/local/bin" exec-path)
+  (push "/usr/local/git/bin" exec-path)
+  (push "/usr/local/bin" exec-path))
 
 ;;git
 (require 'magit)
