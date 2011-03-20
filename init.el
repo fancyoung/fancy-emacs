@@ -218,6 +218,14 @@
 (require 'goto-last-change)  
 (global-set-key "\C-x\C-\\" 'goto-last-change)
 
+;; hightlight-parentheses
+(require 'highlight-parentheses)
+(define-globalized-minor-mode global-highlight-parentheses-mode
+  highlight-parentheses-mode
+  (lambda ()
+    (highlight-parentheses-mode t)))
+(global-highlight-parentheses-mode t)
+
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;快捷开启空格显示模式
