@@ -222,7 +222,11 @@
 ;;git
 (require 'magit)
 (global-set-key (kbd "C-c g") 'magit-status)  
-  
+
+;;
+(require 'goto-last-change)  
+(global-set-key "\C-x\C-\\" 'goto-last-change)
+
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;快捷开启空格显示模式
