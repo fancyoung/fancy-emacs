@@ -235,6 +235,10 @@
     (highlight-parentheses-mode t)))
 (global-highlight-parentheses-mode t)
 
+;; for chrome(edit with emacs)
+(require 'edit-server)
+(edit-server-start)
+
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;快捷开启空格显示模式
