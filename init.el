@@ -239,6 +239,20 @@
 (require 'edit-server)
 (edit-server-start)
 
+;; thing-edit
+(require 'thing-edit)
+(define-prefix-command 'thing-edit-map)
+(global-set-key (kbd "C-c w") 'thing-paste-word)
+(global-set-key (kbd "C-c l") 'thing-paste-line)
+(global-set-key (kbd "C-c x") 'thing-paste-sexp)
+;(global-set-key (kbd "C-c f") 'thing-paste-defun) ;key used for rinari
+;(global-set-key (kbd "C-c s") 'thing-paste-sentence)
+(global-set-key (kbd "C-c C-w") 'thing-copy-word)
+(global-set-key (kbd "C-c C-l") 'thing-copy-line)
+(global-set-key (kbd "C-c C-x") 'thing-copy-sexp)
+(global-set-key (kbd "C-c C-f") 'thing-copy-defun)
+(global-set-key (kbd "C-c C-s") 'thing-copy-sentence)
+
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;快捷开启空格显示模式
