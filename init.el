@@ -253,6 +253,55 @@
 (global-set-key (kbd "C-c C-f") 'thing-copy-defun)
 (global-set-key (kbd "C-c C-s") 'thing-copy-sentence)
 
+;; mew(email tool)
+(add-to-list 'load-path "/usr/share/emacs23/site-lisp/mew")
+(autoload 'mew "mew" nil t)
+(autoload 'mew-send "mew" nil t)
+;; Optional setup (Read Mail menu for Emacs 21):
+;; (if (boundp 'read-mail-command)
+;;     (setq read-mail-command 'mew))
+ 
+;; Optional setup (e.g. C-xm for sending a message):
+(autoload 'mew-user-agent-compose "mew" nil t)
+(if (boundp 'mail-user-agent)
+    (setq mail-user-agent 'mew-user-agent))
+(if (fboundp 'define-mail-user-agent)
+    (define-mail-user-agent
+      'mew-user-agent
+      'mew-user-agent-compose
+      'mew-draft-send-message
+      'mew-draft-kill
+      'mew-send-hook))
+
+
+;; twitter, weibo, ...
+;u更新状态信息
+;i隐藏显示图标
+;c-m 评论信息
+;c-c c-m 转发信息
+(require 'twittering-mode)
+(setq twittering-use-master-password t)
+(twittering-enable-unread-status-notifier)
+(setq-default twittering-icon-mode t)
+
+(custom-set-faces
+;; custom-set-faces was added by Custom.
+;; If you edit it by hand, you could mess it up, so be careful.
+;; Your init file should contain only one such instance.
+;; If there is more than one, they won’t work right.
+'(org-checkbox ((t (:inherit bold))))
+'(org-checkbox-statistics-todo ((t (:inherit org-todo :foreground "DarkKhaki"))) t)
+'(org-level-1 ((t (:inherit outline-1 :foreground "LimeGreen"))))
+'(org-level-2 ((t (:inherit outline-2 :foreground "YellowGreen"))))
+'(org-level-3 ((t (:inherit outline-3 :foreground "SeaGreen3"))))
+'(org-todo ((t (:weight bold))))
+'(org-warning ((t (:inherit font-lock-warning-face :foreground "LightGoldenrod"))))
+'(twittering-zebra-1-face ((t (:background "#2b2b2b"))))
+'(twittering-zebra-2-face ((t (:background "#00574F")))))
+
+(setq twittering-initial-timeline-spec-string `(":home@sina"
+                                                     ; ":home@douban"
+                                                     ))
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;快捷开启空格显示模式
