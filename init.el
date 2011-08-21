@@ -86,7 +86,10 @@
 ;;不允许用tab做缩进
 (set-default 'indent-tabs-mode nil)
 
-
+;; run lisp in emacs
+; clisp need installed
+; M-x run-lisp
+(setq inferior-lisp-program "/usr/bin/clisp")
 ;;;;;;------====== 扩展 ======------;;;;;;
 
 ;;主题
@@ -296,5 +299,9 @@
 (global-set-key [M-right] 'windmove-right)        ; move to right window
 (global-set-key [M-up] 'windmove-up)              ; move to upper window
 (global-set-key [M-down] 'windmove-down)          ; move to downer window
+
+;;hs-mirror-mode模式下用f9切换折叠
+(global-set-key [C-f1] 'hs-toggle-hiding)
+
 ;;;;;;------====== self ======------;;;;;;
 ;;;(require 'private)
