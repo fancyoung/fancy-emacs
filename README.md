@@ -13,6 +13,7 @@ Install
    (in Mac, maybe should set path /usr/local/bin)
    <http://rinari.rubyforge.org/Navigation.html>)
  - install magit
+ - install mew (for email, the path in init.el may need be updated "/usr/share/emacs23/site-lisp/mew")
 
 Include
 ------
