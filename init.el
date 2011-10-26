@@ -1,6 +1,7 @@
 ;;配置路径
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/plugins")
+(add-to-list 'load-path "~/.emacs.d/plugins/auto-complete")
 (add-to-list 'load-path "~/.emacs.d/plugins/ruby-mode")
 
 ;;;;;;------====== 界面 ======------;;;;;;
@@ -136,14 +137,14 @@
 ;;auto-complete
 ;;代码补全
 ;;TAB M-p M-n RET
-;(add-to-list 'load-path
-;	     "~/.emacs.d/plugins/auto-complete")
-;(require 'auto-complete-config)
-;(add-to-list'ac-dictionary-directories
-;             "~/.emacs.d/plugins/auto-complete/dict")
-;(ac-config-default)
-;(global-set-key "\M-/" 'auto-complete)
-;(setq ac-auto-start nil)
+(add-to-list 'load-path
+	     "~/.emacs.d/plugins/auto-complete")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories
+             "~/.emacs.d/plugins/auto-complete/dict")
+(ac-config-default)
+;; (global-set-key "\M-/" 'auto-complete)
+;; (setq ac-auto-start nil)
 
 ;;;nxhtml
 (require 'haml-mode)
