@@ -132,7 +132,7 @@
 	     "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
 (yas/initialize)
-(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
+(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets/text-mode")
 
 ;;auto-complete
 ;;代码补全
@@ -146,19 +146,22 @@
 ;; (global-set-key "\M-/" 'auto-complete)
 ;; (setq ac-auto-start nil)
 
+;; snippets in the auto-complete dropdown
+(add-to-list 'ac-sources 'ac-source-yasnippet)
+
 ;;;nxhtml
-(require 'haml-mode)
-(load "~/.emacs.d/plugins/nxhtml/autostart.el")
-;; Mumamo is making emacs 23.3 freak out:
-(when (and (equal emacs-major-version 23)
-           (equal emacs-minor-version 3))
-  (eval-after-load "bytecomp"
-    '(add-to-list 'byte-compile-not-obsolete-vars
-                  'font-lock-beginning-of-syntax-function))
-  ;; tramp-compat.el clobbers this variable!
-  (eval-after-load "tramp-compat"
-    '(add-to-list 'byte-compile-not-obsolete-vars
-                  'font-lock-beginning-of-syntax-function)))
+;;(require 'haml-mode)
+;;(load "~/.emacs.d/plugins/nxhtml/autostart.el")
+;;;; Mumamo is making emacs 23.3 freak out:
+;;(when (and (equal emacs-major-version 23)
+;;           (equal emacs-minor-version 3))
+;;  (eval-after-load "bytecomp"
+;;    '(add-to-list 'byte-compile-not-obsolete-vars
+;;                  'font-lock-beginning-of-syntax-function))
+;;  ;; tramp-compat.el clobbers this variable!
+;;  (eval-after-load "tramp-compat"
+;;    '(add-to-list 'byte-compile-not-obsolete-vars
+;;                  'font-lock-beginning-of-syntax-function)))
 
 ;use default color in major chunk. seems worked.
 ;(setq mumamo-chunk-coloring 'submode-colored) ;can't work
