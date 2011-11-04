@@ -117,6 +117,11 @@
 (autoload 'javascript-mode "javascript" nil t)
 ;;(setq javascript-indent-level 2)
 (setq js-indent-level 2)
+
+;;markdown-mode
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(autoload 'markdown-mode "markdown-mode" nil t)
+
 ;;anything
 ;;索引文件工具
 ;;M-x anything
