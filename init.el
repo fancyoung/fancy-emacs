@@ -149,6 +149,9 @@
 (add-to-list 'ac-dictionary-directories
              "~/.emacs.d/plugins/auto-complete/dict")
 (ac-config-default)
+(global-auto-complete-mode t)
+(setq ac-auto-start 2)
+;; (setq ac-ignore-case nil)
 ;; (global-set-key "\M-/" 'auto-complete)
 ;; (setq ac-auto-start nil)
 
