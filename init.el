@@ -123,6 +123,18 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (autoload 'markdown-mode "markdown-mode" nil t)
 
+;;coffeescrip mode
+(add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
+(autoload 'coffee-mode "coffee-mode" nil t)
+(defun coffee-custom ()
+  "coffee-mode-hook"
+  ;; CoffeeScript uses two spaces.
+  (make-local-variable 'tab-width)
+  (set 'tab-width 2)
+)
+
+(add-hook 'coffee-mode-hook 'coffee-custom)
+
 ;;anything
 ;;索引文件工具
 ;;M-x anything
