@@ -166,11 +166,11 @@
           (equal emacs-minor-version 3))
  (eval-after-load "bytecomp"
    '(add-to-list 'byte-compile-not-obsolete-vars
-                 'font-lock-beginning-of-syntax-function))
+                 'syntax-begin-function))
  ;; tramp-compat.el clobbers this variable!
  (eval-after-load "tramp-compat"
    '(add-to-list 'byte-compile-not-obsolete-vars
-                 'font-lock-beginning-of-syntax-function)))
+                 'syntax-begin-function)))
 
 ;use default color in major chunk. seems worked.
 ;(setq mumamo-chunk-coloring 'submode-colored) ;can't work
