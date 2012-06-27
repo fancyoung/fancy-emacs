@@ -352,7 +352,8 @@ Also ignores spaces after parenthesis when 'space."
                               ((forward-char)))))
                  (insert coding-system)))
               ((looking-at "\\s *#.*coding\\s *[:=]"))
-              (t (insert "# -*- coding: " coding-system " -*-\n"))
+              ;; (t (insert "# -*- coding: " coding-system " -*-\n"))
+              (t (insert ""))
               )))))
 
 ;;;###autoload

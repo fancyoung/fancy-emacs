@@ -333,7 +333,8 @@ Also ignores spaces after parenthesis when 'space."
                  (insert coding-system)))
               ((looking-at "\\s *#.*coding\\s *[:=]"))
               (t (when ruby-insert-encoding-magic-comment
-                   (insert "# -*- coding: " coding-system " -*-\n")))
+                   ;; (insert "# -*- coding: " coding-system " -*-\n")))
+                   (insert "")))
               )))))
 
 ;;;###autoload
