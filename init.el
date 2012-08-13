@@ -87,6 +87,9 @@
 ;;不允许用tab做缩进
 (set-default 'indent-tabs-mode nil)
 
+;; revert buffers automatically when underlying files are changed externally
+(global-auto-revert-mode t)
+
 ;; run lisp in emacs
 ; clisp need installed
 ; M-x run-lisp
