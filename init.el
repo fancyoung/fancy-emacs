@@ -89,6 +89,8 @@
 
 ;; revert buffers automatically when underlying files are changed externally
 (global-auto-revert-mode t)
+;; 粘贴时替换选中文字
+(delete-selection-mode t)
 
 ;; run lisp in emacs
 ; clisp need installed
