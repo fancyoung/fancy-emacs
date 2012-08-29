@@ -96,6 +96,10 @@
 ; clisp need installed
 ; M-x run-lisp
 (setq inferior-lisp-program "/usr/bin/clisp")
+
+;; hide user status in ERC
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
+
 ;;;;;;------====== 扩展 ======------;;;;;;
 
 ;;主题
