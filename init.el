@@ -353,6 +353,15 @@
 (setq twittering-initial-timeline-spec-string `(":home@sina"
                                                      ; ":home@douban"
                                                      ))
+
+;; emmet
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
+(setq emmet-move-cursor-between-quotes t)
+(global-set-key (kbd "C-<tab>") 'emmet-expand-line)
+
 ;;;;;;------====== 快捷 ======------;;;;;;
 
 ;;快捷开启空格显示模式
