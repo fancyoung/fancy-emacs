@@ -3,7 +3,10 @@ tramp
 \#*
 \#*\#
 *.log
+*.swp
 *~
 private.el
 anything-c-adaptive-history
 ac-comphist.dat
+session.*
+elpa
